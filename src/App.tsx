@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useCursor, useReveal, useScrollState, useTheme, useLang } from "./hooks";
-import { applyThemeCSS, injectFonts } from "./styles/css";
+import { applyThemeCSS } from "./styles/css";
 import { THEME_TOKENS } from "./data";
 import LeftSidebar  from "./components/LeftSidebar";
 import RightSidebar from "./components/RightSidebar";
@@ -19,10 +19,7 @@ export default function App() {
   useCursor();
   useReveal();
 
-  // Inject fonts once on mount
-  useEffect(() => { injectFonts(); }, []);
-
-  // Re-apply CSS whenever theme changes
+  // Re-apply CSS only when theme CHANGES (fonts already injected in main.tsx)
   useEffect(() => {
     applyThemeCSS(THEME_TOKENS[theme]);
   }, [theme]);
