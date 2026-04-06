@@ -19,21 +19,18 @@ export default function App() {
   useCursor();
   useReveal();
 
-  // Re-apply CSS only when theme CHANGES (fonts already injected in main.tsx)
+  // Re-apply CSS only when theme changes.
+  // Initial CSS already applied in main.tsx before first render.
   useEffect(() => {
     applyThemeCSS(THEME_TOKENS[theme]);
   }, [theme]);
 
   return (
     <>
-      {/* Custom cursor */}
       <div id="cur"  />
       <div id="curR" />
-
-      {/* Film-grain noise overlay */}
       <div id="noise" />
 
-      {/* Side navigations */}
       <LeftSidebar  lang={lang} active={active} />
       <RightSidebar
         lang={lang}
@@ -43,7 +40,6 @@ export default function App() {
         onTheme={toggleTheme}
       />
 
-      {/* Central content column */}
       <div id="main">
         <div id="box">
           <Hero      lang={lang} />

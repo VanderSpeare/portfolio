@@ -1,16 +1,5 @@
 import type { ThemeTokens } from "../types";
 
-/** Injects Google Fonts once. */
-export function injectFonts(): void {
-  if (document.getElementById("pf-fonts")) return;
-  const l = document.createElement("link");
-  l.id = "pf-fonts";
-  l.rel = "stylesheet";
-  l.href =
-    "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Noto+Serif+JP:wght@200;300;400&display=swap";
-  document.head.appendChild(l);
-}
-
 /** Rebuilds the <style id="dcss"> block whenever the theme changes. */
 export function applyThemeCSS(tk: ThemeTokens): void {
   let el = document.getElementById("dcss") as HTMLStyleElement | null;
