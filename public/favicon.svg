@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#09090d"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#4f8ef7"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#6688ee"/>
+      <stop offset="100%" stop-color="#8844cc"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+
+  <!-- Outer orbit ring -->
+  <circle cx="32" cy="32" r="27" fill="none" stroke="url(#accent)" stroke-width="1" opacity="0.35"/>
+
+  <!-- Middle orbit ring -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="url(#accent)" stroke-width="1" opacity="0.2"/>
+
+  <!-- Inner glow circle -->
+  <circle cx="32" cy="32" r="10" fill="url(#accent2)" opacity="0.18"/>
+
+  <!-- Center mark — stylised "P" / initials shape using geometry -->
+  <!-- Vertical bar -->
+  <rect x="26" y="20" width="3" height="24" rx="1.5" fill="url(#accent)"/>
+  <!-- Top horizontal cap -->
+  <rect x="26" y="20" width="10" height="3" rx="1.5" fill="url(#accent)"/>
+  <!-- Mid horizontal -->
+  <rect x="26" y="29" width="9" height="3" rx="1.5" fill="url(#accent)"/>
+  <!-- Curve arc top-right -->
+  <path d="M36 20 Q42 20 42 26 Q42 32 35 32" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Satellite dot on outer ring (top) -->
+  <circle cx="32" cy="5" r="2.8" fill="url(#accent)" opacity="0.9"/>
+  <!-- Satellite dot on outer ring (bottom-right) -->
+  <circle cx="55.4" cy="43.5" r="2.2" fill="url(#accent2)" opacity="0.8"/>
+  <!-- Satellite dot on outer ring (bottom-left) -->
+  <circle cx="8.6" cy="43.5" r="1.8" fill="#a855f7" opacity="0.7"/>
+</svg>
