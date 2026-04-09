@@ -9,8 +9,6 @@ export default defineConfig({
   base: "/",
 
   server: {
-    port: 5173,
-    open: true,
    
     // Needed if you access via LAN (e.g. phone on same wifi)
     host: "portfolio-yqyz.onrender.com",
