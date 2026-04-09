@@ -4,33 +4,29 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
 
-  // ── base: "/" works for Vercel/Netlify.
-  //    Change to "/repo-name/" if deploying to GitHub Pages subdirectory.
   base: "/",
 
+  // For development (local)
   server: {
     port: 5173,
-    open: true,
-    allowedHosts: ['allow-all'],
-    
+    host: true,           // allows access from other devices
+    allowedHosts: true,   // allows all hosts during dev
+  },
+
+  // For production preview (what Render uses with "npm run preview")
+  preview: {
+    port: 4173,
     host: true,
-    // Needed if you access via LAN (e.g. phone on same wifi)
-    
+    allowedHosts: true,                     // ← This is the most important
+    // allowedHosts: ['portfolio-yqyz.onrender.com'],  // or use specific domain
   },
-   preview: {
-    allowedHosts: ['portfolio-yqyz.onrender.com'],   // ← Also add for preview
-  },
+
   build: {
     outDir: "dist",
-    // Generate sourcemaps only in staging, not production
     sourcemap: false,
-    // Keep assets readable in dist for debugging
-    assetsDir: "assets",
-    // Logo is ~72 kB so it will NOT be inlined (threshold is 4 kB)
-    assetsInlineLimit: 4_096,
+    assetsInlineLimit: 4096,
     rollupOptions: {
       output: {
-        // Separate vendor bundle for better CDN caching
         manualChunks: {
           react: ["react", "react-dom"],
         },
