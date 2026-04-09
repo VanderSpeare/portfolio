@@ -11,6 +11,7 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true,
+    portfolio-yqyz.onrender.com: true,
     // Needed if you access via LAN (e.g. phone on same wifi)
     host: true,
   },
