@@ -9,12 +9,17 @@ export default defineConfig({
   base: "/",
 
   server: {
-   port:5173,
-    open : true,
+    port: 5173,
+    open: true,
+    allowedHosts: ['allow-all'],
+    
+    host: true,
     // Needed if you access via LAN (e.g. phone on same wifi)
-    allowedHost :'all',
+    
   },
-
+   preview: {
+    allowedHosts: ['portfolio-yqyz.onrender.com'],   // ← Also add for preview
+  },
   build: {
     outDir: "dist",
     // Generate sourcemaps only in staging, not production
